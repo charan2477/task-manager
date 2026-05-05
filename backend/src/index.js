@@ -54,7 +54,7 @@ async function startServer() {
         password: process.env.MYSQLPASSWORD || process.env.DB_PASS || '',
         port: parseInt(process.env.MYSQLPORT || process.env.DB_PORT || '3306', 10),
       };
-      dbName = process.env.MYSQLDATABASE || process.env.DB_NAME || 'task_manager_db';
+      dbName = process.env.MYSQLDATABASE || process.env.MYSQL_DATABASE || process.env.DB_NAME || 'task_manager_db';
     }
 
     const connection = await mysql.createConnection(connConfig);

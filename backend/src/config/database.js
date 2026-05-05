@@ -11,7 +11,7 @@ if (process.env.MYSQL_URL) {
     pool: { max: 5, min: 0, acquire: 30000, idle: 10000 },
   });
 } else {
-  const dbName = process.env.MYSQLDATABASE || process.env.DB_NAME;
+  const dbName = process.env.MYSQLDATABASE || process.env.MYSQL_DATABASE || process.env.DB_NAME;
   const dbUser = process.env.MYSQLUSER || process.env.DB_USER;
   const dbPass = process.env.MYSQLPASSWORD || process.env.DB_PASS || '';
   const dbHost = process.env.MYSQLHOST || process.env.DB_HOST || 'localhost';
